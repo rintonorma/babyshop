@@ -154,6 +154,26 @@ $(document).ready(function () {
     ]
   });
 
+  $('.slider-filter').slick({
+    dots: false,
+    infinite: false,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: false,
+    variableWidth: true,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: false,
+          centerPadding: '40px',
+          slidesToShow: 1
+        }
+      },
+    ]
+  });
+
   $('.slider-forproduct').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -201,5 +221,11 @@ $(document).ready(function () {
   });
 
   $("#ex2").slider({});
+
+  $('input[name="daterange"]').daterangepicker({
+    opens: 'left'
+  }, function(start, end, label) {
+    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  });
 
 });
